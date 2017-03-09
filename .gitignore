@@ -1,0 +1,21 @@
+# Basic ignores
+.idea
+*.tar.gz
+*.tar
+__pycache__
+*.kdev4
+.kdev4/*
+
+# Program folders
+cache/*
+models/*
+data/*
+!data/input.txt
+!data/learning
+
+# Github API files
+user
+secret
+
+# Documentation
+doc/*
