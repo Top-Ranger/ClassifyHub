@@ -19,3 +19,7 @@ secret
 
 # Documentation
 doc/*
+
+# Test files
+!tests/**
+tests/__pycache__
