@@ -17,6 +17,14 @@ Contents:
 
 -------------------------------------------------------------------------------
 
+If you use this work please cite:
+
+Soll M., Vosgerau M. (2017) ClassifyHub: An Algorithm to Classify GitHub Repositories. In: Kern-Isberner G., Fürnkranz J., Thimm M. (eds) KI 2017: Advances in Artificial Intelligence. KI 2017. Lecture Notes in Computer Science, vol 10505. Springer, Cham
+
+DOI: https://doi.org/10.1007/978-3-319-67190-1_34
+
+-------------------------------------------------------------------------------
+
 0. Introduction
 
 ClassifyHub is an algorithm to tackle the 'GitHub Classification Problem'.
