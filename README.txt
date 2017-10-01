@@ -3,6 +3,14 @@ ClassifyHub - User guide
 
 -------------------------------------------------------------------------------
 
+If you use this work please cite:
+
+Soll M., Vosgerau M. (2017) ClassifyHub: An Algorithm to Classify GitHub Repositories. In: Kern-Isberner G., Fürnkranz J., Thimm M. (eds) KI 2017: Advances in Artificial Intelligence. KI 2017. Lecture Notes in Computer Science, vol 10505. Springer, Cham
+
+DOI: https://doi.org/10.1007/978-3-319-67190-1_34
+
+-------------------------------------------------------------------------------
+
 Contents:
    0.   Introduction
    1.1. Dependencies
@@ -14,14 +22,6 @@ Contents:
    6.   Graphical User Interface
    7.   Unit tests
    8.   Documentation
-
--------------------------------------------------------------------------------
-
-If you use this work please cite:
-
-Soll M., Vosgerau M. (2017) ClassifyHub: An Algorithm to Classify GitHub Repositories. In: Kern-Isberner G., Fürnkranz J., Thimm M. (eds) KI 2017: Advances in Artificial Intelligence. KI 2017. Lecture Notes in Computer Science, vol 10505. Springer, Cham
-
-DOI: https://doi.org/10.1007/978-3-319-67190-1_34
 
 -------------------------------------------------------------------------------
 
@@ -48,12 +48,12 @@ installed:
    lockfile (https://pypi.python.org/pypi/lockfile)
    scikit-learn (http://scikit-learn.org/stable/index.html)
 
-On most systems these can be installed using pip. Depending on your 
+On most systems these can be installed using pip. Depending on your
 distribution you might have to install pip (Python 3 version) manually. First
 ensure you have an up-to-date pip version installed:
    sudo pip3 install --upgrade pip
 
-After this you can install the required packages by using the following 
+After this you can install the required packages by using the following
 commands:
 
    pip3 install --user --upgrade requests
@@ -61,7 +61,7 @@ commands:
    pip3 install --user numpy scipy scikit-learn
 
 If you are a Windows 10 user you need to get Python 3 first. Please use this
-site to get the latest version: 
+site to get the latest version:
 
    https://www.python.org/downloads/
 
@@ -79,7 +79,7 @@ you system from
 
    http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy
 
-e.g. scipy-0.18.1-cp35-cp35m-win_amd64.whl is suitable for Python 3.5.x on a 
+e.g. scipy-0.18.1-cp35-cp35m-win_amd64.whl is suitable for Python 3.5.x on a
 64bit windows. After your download is complete please use following command
 in the file directory:
 
@@ -113,7 +113,7 @@ we therefore recommend installing it through your packet manager, e.g.:
 PLEASE NOTE: Depending on your distribution, the QML part of PyQt5 might be
 seperated from the main PyQt5 package.
 
-UBUNTU: Due to a bug in Ubuntu (see 
+UBUNTU: Due to a bug in Ubuntu (see
 https://bugs.launchpad.net/appmenu-qt5/+bug/1323853) the menu bar of the GUI
 is not visible. Unfortunately this is nothing we can fix. Hopefully this will
 be fixed by Ubuntu.
@@ -130,14 +130,14 @@ Tested distributions:
 
 2. GitHub API setup
 
-The amount of unauthenticated requests to the GitHub API is very limited 
+The amount of unauthenticated requests to the GitHub API is very limited
 (https://developer.github.com/v3/#rate-limiting). Therefore it is adviced to
 use authentificated requests, especially for operations which need a huge
 amount of requests (like learning and validation). For this an
 "access token" is needed.
 
 The username for the authentification is stored as plain text in a USER file
-(default location: "./user"). The access token for the authentification is 
+(default location: "./user"). The access token for the authentification is
 stored as plain text in a SECRET file (default location: "./secret"). The
 file names are case sensitive and do not have an extension (unless you change
 the paths through command line arguments).
@@ -149,8 +149,8 @@ Requestst are automatically authentificated once this two files are found.
 3. Learning
 
 The learning process fits the different classifiers to the provided data.
-The learning data is considered to be placed in a folder 
-(defaut: "./data/learning/"), where each class has an own file containing the 
+The learning data is considered to be placed in a folder
+(defaut: "./data/learning/"), where each class has an own file containing the
 repositories of the class in the input format.
 
 The learning process has to be run at least once before the batch processing
@@ -161,7 +161,7 @@ The learning process can be started by running run_learning.py, e.g.:
 
    python3 run_learning.py
 
-The parameter of the learning process can be controlled through command line 
+The parameter of the learning process can be controlled through command line
 arguments. For more information run
 
    python3 run_learning.py --help
@@ -173,10 +173,10 @@ arguments. For more information run
 NOTE: The learning process has to be run at least once before batch processing
 can be run! See section 3 for more information.
 
-The batch processing script processes a text file (default location: 
+The batch processing script processes a text file (default location:
 "./data/input.txt") containing repositories in the specified input format and
 stores the results in an output file (default location: "./data/output.txt")
-in the specified output format. The script is started by running 
+in the specified output format. The script is started by running
 run_batch.py, e.g.:
 
    python3 run_batch.py
@@ -191,14 +191,14 @@ available command line options, e.g.
 5. Performance validation
 
 To evaluate the performance of our algorithm (in terms of precision/recall) a
-validation script is provided. This script runs a k-fold cross-validation 
+validation script is provided. This script runs a k-fold cross-validation
 (default: k=10) on the learning data (see section 2). The result is printed as
-well as written to the output file (default location: "./data/output.txt"). 
+well as written to the output file (default location: "./data/output.txt").
 The script is started by running run_batch.py, e.g.:
 
    python3 run_validate.py
 
-The parameter of the validation process can be controlled through command line 
+The parameter of the validation process can be controlled through command line
 arguments. For more information run
 
    python3 run_validate.py --help
